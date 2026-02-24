@@ -8,32 +8,65 @@
 </head>
 <body>
   <main class="wrap">
-    <a class="link" href="/characters/<%= character._id %>">← Cancel</a>
+    <a class="link" href="/">← Return Home</a>
 
     <section class="card">
-      <h1>Edit Character</h1>
-
-      <form action="/characters/<%= character._id %>" method="post" class="form">
-        <label>Name</label>
-        <input name="name" maxlength="40" value="<%= character.name %>" required />
-
-        <label>Type</label>
-        <select name="type" required>
-          <% types.forEach(t => { %>
-            <option value="<%= t %>" <%= character.type === t ? 'selected' : '' %>><%= t %></option>
-          <% }) %>
-        </select>
-
-        <label>Trait</label>
-        <select name="trait" required>
-          <% traits.forEach(tr => { %>
-            <option value="<%= tr %>" <%= character.trait === tr ? 'selected' : '' %>><%= tr %></option>
-          <% }) %>
-        </select>
-
-        <button type="submit">Save</button>
-      </form>
-    </section>
+        <h2 class="h2">Submit a Project</h2>
+        <form action="/create-project" method="post" class="form">
+          <label class="label" for="message">Title:</label>
+          <textarea
+            id="title"
+            name="title"
+            class="textarea"
+            maxlength="280"
+            placeholder="Student Service Project"
+            required
+          ></textarea>
+          <label class="label" for="description">Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            class="textarea"
+            placeholder="What's your project about?"
+            required
+          ></textarea>
+          <label class="label" for="email">Email:</label>
+          <input
+            id="email"
+            name="email"
+            class="textarea"
+            maxlength="280"
+            placeholder="Student Name (StudentName@westridge.org)"
+            required
+          ></input>
+          <label class="label" for="topic">Topic:</label>
+          <input
+            id="topic"
+            name="topic"
+            class="textarea"
+            maxlength="280"
+            placeholder="UN Sustainability Goals Met"
+            required
+          ></input>
+           <input 
+            type="radio"
+            id="CAP"
+            name="type"
+            value="CAP"
+       
+          ></input><label for="CAP">CAP</label><br>
+          <input 
+            type="radio"
+            id="CTS"
+            name="type"
+            value="CTS"
+          ></input><label for="CTS">CTS</label><br>
+          <div class="form__row">
+            <button class="btn btn--primary" type="submit">Post it</button>
+          </div>
+          <p>//Secondary Verification required, needs admin review before posting</p>
+        </form>
+      </section>
   </main>
 </body>
 </html>
