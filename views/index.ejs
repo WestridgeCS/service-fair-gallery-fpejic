@@ -41,12 +41,14 @@
             <tbody>
               <% entries.forEach(e => { %>
                 <tr>
+                  <% if (e.accepted ===) {%>
+                    <!-- hide entry? -->
+                  <% }%>
                   <td>
                     <a class="link" href="/project/<%= e._id %>"><%= e.title %></a>
                   </td>
                   <td class="td-center"><%= e.topic %></td> 
                   <td class="td-center"><%= e.type %></td> 
-                  <!-- add sort function -->
                 </tr>
               <% }) %>
 
@@ -67,10 +69,10 @@
             <thead>
               <tr>
                 <h2>Spring Service Fair</h2>
-                <th class="th-center">Title</th>
+                <th class="th-center">Title ▼</th>
                
-                <th class="th-center">Topic</th>
-                <th class="th-center">Type</th>
+                <th class="th-center">Topic ▼</th>
+                <th class="th-center">Type ▼</th>
               </tr>
             </thead>
             <tbody>

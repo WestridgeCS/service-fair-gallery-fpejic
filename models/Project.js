@@ -31,6 +31,10 @@ const projectSchema = new mongoose.Schema(
       type: String,
       required: true,
       default: ''
+    },
+    accepted :{
+      type: Boolean,
+      default:false
     }
   },
   { timestamps: true }

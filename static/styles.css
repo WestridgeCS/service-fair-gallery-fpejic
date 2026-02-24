@@ -22,11 +22,12 @@
   height: 42px;
   display: grid;
   place-items: center;
-  /* background: var(--card); */
   border: 3px solid #ffffff;
-  box-shadow: var(--shadow);
+  border-radius: 25px;
+  /* box-shadow: var(--shadow); */
   font-weight: 900;
   color: var(--hot);
+  background-color: rgb(143,186,102);
 }
 .brand__title{
   font-weight: 900;
@@ -126,14 +127,18 @@
 }
 
 .btn{
-  border: 3px solid rgba(43,10,36,0.3);
-  background: rgb(71,119,60);
+  border: 3px solid  #daeace;
+  background:#68ad51;
   color: var(--ink);
   padding: 10px 12px;
   font-weight: 900;
   cursor: pointer;
-  box-shadow: 0 7px 0 rgba(43,10,36,0.12);
+  box-shadow: 0 7px 0 rgba(0, 0, 0, 0.12);
   transition: transform 0.05s ease;
+}
+.btn:hover{
+  border: 3px solid  #daeace;
+  background:#8bce6f;
 }
 .btn:active{
   transform: translateY(2px);
@@ -154,13 +159,13 @@
   border-collapse: collapse;
   min-width: 680px;
 }
-th, td{
+ td{
   padding: 10px;
-  border-bottom: 2px dashed rgba(43,10,36,0.18);
+  border-bottom: 2px dotted rgba(43,10,36,0.18);
   vertical-align: top;
 }
 thead th{
-  background: rgb(71,119,60);
+  background: #4faad7;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -200,7 +205,7 @@ input {
 .temp-spacing{
   height: 50vh;
    background: var(--card);
-  border: 2px solid rgba(43,10,36,0.25);
+  border: 2px solid rgba(0, 0, 0, 0.25);
   
   min-width: 90vw;
   padding: 10px;

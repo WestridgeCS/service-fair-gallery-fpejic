@@ -86,3 +86,25 @@ router.get('/edit', async (req, res, next) => {
   }
 });
 
+router.get ('/stjohn', async (req, res, next) => {
+try{
+  const project = await Project.findById(req.params.id);
+    console.log("in stjohn");
+    if (!project) {
+      res.status(404).send('Project not found');
+      return;
+    }
+
+    res.render('project', {
+      title: project.title,
+      email: project.email,
+      description: project.description,
+      type: project.type,
+      topic: project.topic,
+      accepted: project.accepted
+    });
+}  catch (err) {
+    next(err);
+}
+})
+
