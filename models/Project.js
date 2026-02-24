@@ -1,28 +1,47 @@
 import mongoose from 'mongoose';
 
-const goodNewsSchema = new mongoose.Schema(
+const projectSchema = new mongoose.Schema(
   {
-    message: {
+    title: {
       type: String,
       required: true,
       trim: true,
       maxlength: 280
     },
-    votes: {
-      type: Number,
-      default: 0
+    email: {
+      required: true,
+      type: String,
+      default: ''
+    },
+    description: {
+      type: String,
+      required: true,
     },
     // Save a formatted date string so it’s “already formatted” in MongoDB
     dateLabel: {
       type: String,
       default: ''
+    },
+    topic: {
+      type: String,
+      default: '',
+      required: true
+    },
+    type :{
+      type: String,
+      required: true,
+      default: ''
+    },
+    accepted :{
+      type: Boolean,
+      default:false
     }
   },
   { timestamps: true }
 );
 
 // Set dateLabel automatically on create/save
-goodNewsSchema.pre('save', function (next) {
+projectSchema.pre('save', function (next) {
   if (!this.dateLabel) {
     this.dateLabel = new Intl.DateTimeFormat('en-US', {
       weekday: 'short',
@@ -34,4 +53,4 @@ goodNewsSchema.pre('save', function (next) {
   next();
 });
 
-export const GoodNews = mongoose.model('GoodNews', goodNewsSchema);
+export const Project = mongoose.model('Project', projectSchema);
